@@ -1,8 +1,8 @@
-// Dynamic Footer Year and Last Modified
+// Footer dinámico
 document.querySelector("#year").textContent = new Date().getFullYear();
 document.querySelector("#lastModified").textContent = document.lastModified;
 
-// Responsive Hamburger Menu
+// Menú hamburguesa
 const menuButton = document.querySelector("#menu-button");
 const menu = document.querySelector("#menu");
 

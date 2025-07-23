@@ -6,12 +6,13 @@
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   background-color: #f9f9f9;
   color: #333;
   line-height: 1.5;
 }
 
+/* Header */
 header {
   background: #004080;
   color: white;
@@ -33,6 +34,11 @@ header h1 {
   cursor: pointer;
 }
 
+/* Navigation */
+.hidden {
+  display: none;
+}
+
 nav ul {
   list-style: none;
   display: flex;
@@ -46,10 +52,6 @@ nav ul {
   padding: 1rem;
 }
 
-nav ul.hidden {
-  display: none;
-}
-
 nav a {
   color: white;
   text-decoration: none;
@@ -60,7 +62,7 @@ nav a:hover {
   color: #ffd700;
 }
 
-/* Main content */
+/* Main */
 main {
   max-width: 1200px;
   margin: auto;
