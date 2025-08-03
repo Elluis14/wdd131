@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product Review Form</title>
+  <link rel="stylesheet" href="styles/form.css" />
+  <script src="scripts/form.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>Product Review Form</h1>
+  </header>
+
+  <main>
+    <form method="get" action="review.html">
+      <label for="productName">Product Name*</label>
+      <select id="productName" name="productName" required>
+        <option value="" disabled selected>Select a Product ...</option>
+        <!-- Options added dynamically -->
+      </select>
+
+      <fieldset>
+        <legend>Overall Rating*</legend>
+        <label><input type="radio" name="rating" id="star1" value="1" required>☆</label>
+        <label><input type="radio" name="rating" id="star2" value="2">☆☆</label>
+        <label><input type="radio" name="rating" id="star3" value="3">☆☆☆</label>
+        <label><input type="radio" name="rating" id="star4" value="4">☆☆☆☆</label>
+        <label><input type="radio" name="rating" id="star5" value="5">☆☆☆☆☆</label>
+      </fieldset>
+
+      <label for="installDate">Date of Installation*</label>
+      <input type="date" id="installDate" name="installDate" required />
+
+      <fieldset>
+        <legend>Useful Features</legend>
+        <label><input type="checkbox" id="feature1" name="features" value="Easy to Use" /> Easy to Use</label>
+        <label><input type="checkbox" id="feature2" name="features" value="Durable" /> Durable</label>
+        <label><input type="checkbox" id="feature3" name="features" value="Affordable" /> Affordable</label>
+      </fieldset>
+
+      <label for="writtenReview">Written Review</label>
+      <textarea id="writtenReview" name="writtenReview" rows="4" cols="50"></textarea>
+
+      <label for="userName">Your Name</label>
+      <input type="text" id="userName" name="userName" />
+
+      <input type="submit" value="Submit Review" />
+    </form>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="year"></span> | Last Modified: <span id="lastModified"></span></p>
+  </footer>
+</body>
+</html>
