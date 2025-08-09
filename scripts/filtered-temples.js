@@ -40,6 +40,35 @@ const temples = [
     dedicated: "1919-11-27",
     area: 47500,
     imageUrl: "https://fheontheroad.com/wp-content/uploads/2023/04/B683AA44-6911-4CEF-85C7-A33FFB02CC4A-768x952.jpeg"
+  },
+
+  {
+    name: "Colonia Juárez Chihuahua Mexico Temple",
+    location: "Colonia Juárez, Chihuahua, Mexico",
+    dedicated: "1999-03-06",
+    area: 6800, // SMALL: < 10,000 ft²
+    imageUrl: "https://content.churchofjesuschrist.org/acp/bc/cp/Mexico/imagenes/templos_mx/1200x675/03_templo_colonia_juarez_612x340px.png"
+  },
+  {
+    name: "Oaxaca Mexico Temple",
+    location: "Oaxaca, Mexico",
+    dedicated: "2000-03-11",
+    area: 10700,
+    imageUrl: "https://churchofjesuschrist.org/imgs/f4d7feeaec4cb56a01fe624fad0ddddb26267d11/full/500%2C/0/default"
+  },
+  {
+    name: "Paris France Temple",
+    location: "Le Chesnay, France",
+    dedicated: "2017-05-21",
+    area: 44175,
+    imageUrl: "https://www.churchofjesuschrist.org/imgs/5ec026c4efeaaa19a98e40f0f1b4c6069ae63517/full/500%2C/0/default"
+  },
+  {
+    name: "Provo City Center Temple",
+    location: "Provo, Utah, USA",
+    dedicated: "2016-03-20",
+    area: 85084,
+    imageUrl: "https://www.churchofjesuschrist.org/imgs/e97d43cdfab131f3ffac633cd7c952de861d51c8/full/500%2C/0/default"
   }
 ];
 
@@ -49,18 +78,28 @@ const container = document.getElementById('temples-container');
 // Render function
 function renderTemples(filteredTemples) {
   container.innerHTML = '';
+  if (!filteredTemples.length) {
+    container.innerHTML = `<p class="meta">No temples match this filter.</p>`;
+    return;
+  }
+
   filteredTemples.forEach(temple => {
     const card = document.createElement('section');
     card.classList.add('temple-card');
     card.innerHTML = `
       <h3>${temple.name}</h3>
       <p><strong>Location:</strong> ${temple.location}</p>
-      <p><strong>Dedicated:</strong> ${temple.dedicated}</p>
+      <p><strong>Dedicated:</strong> ${formatDate(temple.dedicated)}</p>
       <p><strong>Area:</strong> ${temple.area.toLocaleString()} sq ft</p>
       <img src="${temple.imageUrl}" alt="${temple.name}" loading="lazy">
     `;
     container.appendChild(card);
   });
+}
+
+function formatDate(isoStr){
+  const d = new Date(isoStr);
+  return d.toLocaleDateString(undefined, { year:'numeric', month:'short', day:'numeric' });
 }
 
 // Filter logic
@@ -95,3 +134,11 @@ document.getElementById("lastModified").textContent = document.lastModified;
 
 // Initial render
 renderTemples(temples);
+
+// (Opcional) Enlazar botones si usas data-filter en el HTML
+document.querySelectorAll('[data-filter]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('[data-filter]').forEach(b => b.classList.toggle('active', b === btn));
+    filterTemples(btn.dataset.filter);
+  });
+});

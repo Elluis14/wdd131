@@ -4,21 +4,22 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Filtered Temples</title>
+  <meta name="description" content="Browse LDS temples around the world and filter by year and size. Includes accessibility-friendly design and dynamic rendering." />
   <link rel="stylesheet" href="styles/filtered-temples.css">
 </head>
 <body>
   <header>
     <h1>Temples of the World</h1>
-    <nav>
-      <button onclick="filterTemples('home')">Home</button>
-      <button onclick="filterTemples('old')">Old</button>
-      <button onclick="filterTemples('new')">New</button>
-      <button onclick="filterTemples('large')">Large</button>
-      <button onclick="filterTemples('small')">Small</button>
+    <nav aria-label="Temple filters">
+      <button type="button" data-filter="home" class="active">Home</button>
+      <button type="button" data-filter="old">Old</button>
+      <button type="button" data-filter="new">New</button>
+      <button type="button" data-filter="large">Large</button>
+      <button type="button" data-filter="small">Small</button>
     </nav>
   </header>
 
-  <main id="temples-container">
+  <main id="temples-container" role="region" aria-live="polite" aria-busy="false">
     <!-- Temple cards will be injected here -->
   </main>
 
