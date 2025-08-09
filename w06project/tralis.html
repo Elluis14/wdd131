@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MX Trails — Trails</title>
+  <meta name="description" content="Filter Mexico's trails by difficulty, distance, and elevation." />
+  <link rel="icon" href="images/favicon.png" />
+  <link rel="stylesheet" href="styles/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-wrap">
+      <a class="logo" href="index.html">MX Trails</a>
+      <nav class="nav">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link active" href="trails.html">Trails</a>
+        <a class="nav-link" href="review.html">Review</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <h1>Trails</h1>
+
+    <form class="filters" id="filters" aria-label="Trail filters">
+      <label>
+        Difficulty
+        <select id="difficulty" name="difficulty">
+          <option value="all">All</option>
+          <option value="beginner">Beginner</option>
+          <option value="intermediate">Intermediate</option>
+          <option value="advanced">Advanced</option>
+        </select>
+      </label>
+
+      <label>
+        Max distance (km)
+        <input id="maxDistance" name="maxDistance" type="number" min="1" step="1" placeholder="e.g., 15" />
+      </label>
+
+      <label>
+        Max climb (m)
+        <input id="maxClimb" name="maxClimb" type="number" min="0" step="10" placeholder="e.g., 300" />
+      </label>
+
+      <div class="filter-actions">
+        <button type="button" id="applyFilters" class="btn">Apply</button>
+        <button type="button" id="resetFilters" class="btn btn-secondary">Reset</button>
+      </div>
+    </form>
+
+    <p id="resultsCount" class="muted"></p>
+    <div id="trailList" class="trail-grid"></div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>&copy; <span id="year"></span> MX Trails</p>
+      <p>Last Modified: <span id="lastModified"></span></p>
+      <p class="muted">Visits on this device: <span id="visitCount"></span></p>
+    </div>
+  </footer>
+
+  <script src="scripts/main.js" defer></script>
+  <script src="scripts/trails.js" defer></script>
+</body>
+</html>
+

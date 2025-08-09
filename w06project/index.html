@@ -2,38 +2,89 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Sitio informativo sobre México" />
-  <title>Discover Mexico</title>
-  <link rel="stylesheet" href="styles/main.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MX Trails — Home</title>
+  <meta name="description" content="Discover Mexico's best trails. Rentals, routes, and reviews." />
+  <link rel="icon" href="images/favicon.png" />
+  <link rel="stylesheet" href="styles/styles.css" />
 </head>
 <body>
-  <header>
-    <h1>Discover Mexico</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
+  <header class="site-header">
+    <div class="wrap header-wrap">
+      <a class="logo" href="index.html">MX Trails</a>
+      <nav class="nav">
+        <a class="nav-link active" href="index.html">Home</a>
+        <a class="nav-link" href="trails.html">Trails</a>
+        <a class="nav-link" href="review.html">Review</a>
+      </nav>
+    </div>
   </header>
 
   <main>
-    <section id="intro">
-      <h2>Welcome to Mexico!</h2>
-      <p>Explore the culture, history, and beauty of Mexico.</p>
-      <img src="images/mexico1.webp" alt="Beautiful landscape of Mexico" loading="lazy">
+    <section class="hero">
+      <picture>
+        <source srcset="images/hero-1200.JPG" media="(min-width: 900px)" type="image/jpeg" />
+        <img src="images/hero-600.JPG" alt="Cycling trail in Mexico" loading="eager" />
+      </picture>
+      <div class="hero-text">
+        <h1>Ride Mexico’s Best Trails</h1>
+        <p>Routes for every level. Rentals. Tips. Community.</p>
+        <a class="btn" href="trails.html">Explore Trails</a>
+      </div>
     </section>
-    <section id="facts"></section>
+
+    <section class="wrap intro">
+      <h2>Why MX Trails?</h2>
+      <p>We curate beautiful, rideable trails across Mexico—mountain paths, forest loops, and scenic climbs. Plan your next ride with confidence.</p>
+      <ul class="features">
+        <li>✔ Curated routes</li>
+        <li>✔ Equipment rentals</li>
+        <li>✔ Community reviews</li>
+      </ul>
+    </section>
+
+    <section class="wrap card">
+      <div class="pad">
+        <h2>Trail Views</h2>
+        <div class="thumbs">
+          <figure>
+            <img src="images/thumb-bosque.JPG" alt="Forest singletrack" width="400" height="260" loading="lazy" />
+            <figcaption>Forest</figcaption>
+          </figure>
+          <figure>
+            <img src="images/thumb-volcan.JPG" alt="Trail near a volcano" width="400" height="260" loading="lazy" />
+            <figcaption>Volcano</figcaption>
+          </figure>
+          <figure>
+            <img src="images/thumb-desierto.JPG" alt="Semi-arid desert trail" width="400" height="260" loading="lazy" />
+            <figcaption>Desert</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap card" aria-labelledby="weatherTitle">
+      <div class="pad">
+        <h2 id="weatherTitle">Weather (sample)</h2>
+        <p class="weather-head">Weather <span class="weather-emoji" aria-hidden="true"></span></p>
+        <ul class="weather-stats">
+          <li>Temp: <strong id="temp">18</strong>°C</li>
+          <li>Wind: <strong id="wind">12</strong> km/h</li>
+          <li>Wind chill: <strong id="chill">N/A</strong></li>
+        </ul>
+        <p class="muted">Wind chill is shown when rules apply (≤10°C and wind &gt; 4.8 km/h).</p>
+      </div>
+    </section>
   </main>
 
-  <footer>
-    <p>&copy; <span id="year"></span> Luis Ramos</p>
-    <p>Last Modified: <span id="lastModified"></span></p>
-    <p><a href="references.html">References</a></p>
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>&copy; <span id="year"></span> MX Trails</p>
+      <p>Last Modified: <span id="lastModified"></span></p>
+      <p class="muted">Visits on this device: <span id="visitCount"></span></p>
+    </div>
   </footer>
 
-  <script src="scripts/main.js"></script>
+  <script src="scripts/main.js" defer></script>
 </body>
 </html>

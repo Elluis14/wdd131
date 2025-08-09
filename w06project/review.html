@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MX Trails — Review</title>
+  <meta name="description" content="Submit a product or trail gear review and help the community." />
+  <link rel="icon" href="images/favicon.png" />
+  <link rel="stylesheet" href="styles/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-wrap">
+      <a class="logo" href="index.html">MX Trails</a>
+      <nav class="nav">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="trails.html">Trails</a>
+        <a class="nav-link active" href="review.html">Review</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <h1>Product Review</h1>
+
+    <form id="reviewForm" class="form card" method="get" action="review.html" novalidate>
+      <fieldset>
+        <legend>Product</legend>
+
+        <label for="product">Product name <span class="req" aria-hidden="true">*</span></label>
+        <select id="product" name="product" required>
+          <option value="" disabled selected>Select a Product ...</option>
+        </select>
+
+        <fieldset class="ratings">
+          <legend>Overall rating <span class="req" aria-hidden="true">*</span></legend>
+          <div class="stars">
+            <label><input type="radio" name="rating" value="1" required> ☆</label>
+            <label><input type="radio" name="rating" value="2" required> ☆☆</label>
+            <label><input type="radio" name="rating" value="3" required> ☆☆☆</label>
+            <label><input type="radio" name="rating" value="4" required> ☆☆☆☆</label>
+            <label><input type="radio" name="rating" value="5" required> ☆☆☆☆☆</label>
+          </div>
+        </fieldset>
+
+        <label for="install">Date of installation <span class="req" aria-hidden="true">*</span></label>
+        <input id="install" name="install" type="date" required />
+      </fieldset>
+
+      <fieldset>
+        <legend>Useful features (check all that apply)</legend>
+        <label><input type="checkbox" name="features" value="durability"> Durability</label>
+        <label><input type="checkbox" name="features" value="comfort"> Comfort</label>
+        <label><input type="checkbox" name="features" value="weight"> Weight</label>
+        <label><input type="checkbox" name="features" value="value"> Value for money</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Your review</legend>
+        <label for="comments">Written review (optional)</label>
+        <textarea id="comments" name="comments" rows="4" placeholder="Share your experience..."></textarea>
+
+        <label for="username">Your name (optional)</label>
+        <input id="username" name="username" type="text" />
+      </fieldset>
+
+      <div class="form-actions">
+        <input type="submit" class="btn" value="Submit Review" />
+      </div>
+    </form>
+
+    <div id="confirm" class="card hidden" role="status" aria-live="polite"></div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>&copy; <span id="year"></span> MX Trails</p>
+      <p>Last Modified: <span id="lastModified"></span></p>
+      <p class="muted">Reviews on this device: <span id="reviewCount"></span></p>
+      <p class="muted">Visits on this device: <span id="visitCount"></span></p>
+    </div>
+  </footer>
+
+  <script src="scripts/main.js" defer></script>
+  <script src="scripts/review.js" defer></script>
+</body>
+</html>
+
